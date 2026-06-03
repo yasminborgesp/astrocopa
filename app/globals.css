@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Variables (Shadcn UI) ─────────────────────────────────────────────── */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 163 97% 15%;      /* #014b3d */
+    --card: 0 0% 100%;
+    --card-foreground: 163 97% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 163 97% 15%;
+    --primary: 137 100% 52%;        /* #0dff51 verde neon */
+    --primary-foreground: 163 97% 15%;
+    --secondary: 181 50% 53%;       /* #43c4c8 ciano */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 160 20% 95%;
+    --muted-foreground: 160 20% 40%;
+    --accent: 52 100% 50%;          /* #ffdf02 amarelo */
+    --accent-foreground: 163 97% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 160 20% 88%;
+    --input: 160 20% 88%;
+    --ring: 137 100% 52%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 163 97% 8%;
+    --foreground: 0 0% 98%;
+    --card: 163 97% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 163 97% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 137 100% 52%;
+    --primary-foreground: 163 97% 10%;
+    --secondary: 181 50% 30%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 163 20% 20%;
+    --muted-foreground: 163 20% 60%;
+    --accent: 52 100% 50%;
+    --accent-foreground: 163 97% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 163 20% 20%;
+    --input: 163 20% 20%;
+    --ring: 137 100% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Sora", sans-serif;
+  }
+}
+
+/* ─── TV Screen styles ──────────────────────────────────────────────────────── */
+@layer utilities {
+  .tv-fullscreen {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    inset: 0;
+  }
+
+  /* Gradiente AstroCopa — editar aqui muda toda a tela da TV */
+  .astrocopa-bg {
+    background:
+      radial-gradient(ellipse at 5% 95%, rgba(255, 223, 2, 0.45) 0%, transparent 35%),
+      radial-gradient(ellipse at 92% 5%, rgba(13, 255, 81, 0.5) 0%, transparent 40%),
+      linear-gradient(135deg, #0dff51 0%, #2baeae 60%, #43c4c8 100%);
+  }
+
+  /* Blobs decorativos fiéis ao PDF */
+  .blob-yellow {
+    background: radial-gradient(ellipse, rgba(255, 223, 2, 0.7) 0%, transparent 70%);
+  }
+
+  .blob-green {
+    background: radial-gradient(ellipse, rgba(13, 255, 81, 0.6) 0%, transparent 70%);
+  }
+
+  /* Texto com sombra escura para legibilidade na TV */
+  .tv-text-shadow {
+    text-shadow: 0 4px 24px rgba(1, 75, 61, 0.4);
+  }
+
+  /* Número gigante da contagem regressiva */
+  .countdown-number {
+    font-size: clamp(8rem, 20vw, 22rem);
+    line-height: 0.85;
+    font-weight: 800;
+    color: #014b3d;
+    font-family: "Sora", sans-serif;
+  }
+
+  .countdown-label {
+    font-size: clamp(2rem, 5vw, 6rem);
+    font-weight: 700;
+    color: #014b3d;
+    letter-spacing: 0.08em;
+    font-family: "Sora", sans-serif;
+  }
+
+  /* Carrossel sem scrollbar */
+  .carousel-container {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    display: none;
+  }
+}
