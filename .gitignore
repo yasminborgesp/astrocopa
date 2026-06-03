@@ -6,4 +6,3 @@ out/
 .DS_Store
 .vercel
 *.pem
-package-lock.json
